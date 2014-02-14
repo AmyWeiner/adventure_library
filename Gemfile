@@ -36,7 +36,12 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'dotenv-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'awesome_print'
+  gem 'quiet_assets'
 end
 
 # Use ActiveModel has_secure_password
