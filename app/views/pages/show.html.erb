@@ -3,12 +3,9 @@
   Name: <%= @page.name %>
 </div>
 <div>
-  Text: <%= @page.text %>
+  Text: <%= simple_format(linkify_page(@page)) %>
 </div>
 
 
 
 
-<%= link_to("New Page", new_adventure_page_path(@adventure, @page), html_options = {})%>
-<%= link_to("View Pages Index", adventure_pages_path(@adventure), html_options = {})%>
-<%= link_to("Return to Adventure", adventures_path(@adventure), html_options = {})%>

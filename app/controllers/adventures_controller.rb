@@ -3,7 +3,7 @@ class AdventuresController < ApplicationController
   def index 
     @adventures = Adventure.all
     respond_to do |format|
-      format.html
+      format.html 
       format.json { render json: @adventures }
     end
   end
@@ -28,6 +28,10 @@ class AdventuresController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @adventure = Adventure.find(params[:id])
   end
 
 end
