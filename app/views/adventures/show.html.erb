@@ -1,5 +1,13 @@
 <h1>Current Adventure</h1>
 
-<%= @adventure.title %></br>
-<%= @adventure.author %></br>
-<%= @adventure.guid %>
+Title: <%= @adventure.title %></br>
+Author: <%= @adventure.author %></br>
+GUID: <%= @adventure.guid %></br>
+
+<% @adventure.pages.each do |page| %>
+  Page Name: <%= page.name %></br>
+  Page Text: <%= page.text %></br>
+<% end %></br>
+
+<%= link_to("Return to Index of Adventures", adventures_path(@adventure), html_options = {})%>
+

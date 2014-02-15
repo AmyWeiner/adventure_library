@@ -21,7 +21,7 @@ class AdventuresController < ApplicationController
   end
 
   def create
-    new_adventure = params.require(:adventure).permit(:title, :author)
+    new_adventure = params.require(:adventure).permit(:title, :author, :pages_attributes => [:title, :text])
     @adventure = Adventure.new(new_adventure)
     if @adventure.save
       redirect_to @adventure

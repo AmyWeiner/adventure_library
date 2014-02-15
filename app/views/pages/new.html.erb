@@ -1,0 +1,10 @@
+<h1>New Page</h1>
+<%= form_for [@adventure, @page] do |f| %>
+  <%= f.label :page_name %></br>
+  <%= f.text_field :name %>
+  <%= f.label :page_text %></br>
+  <%= f.text_field :text %>
+  <%= f.submit %>
+<% end %>
+
+
