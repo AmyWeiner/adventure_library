@@ -1,3 +1,5 @@
 class LibrarySerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :url
+
+  has_many :adventures
 end
