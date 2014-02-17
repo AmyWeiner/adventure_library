@@ -1,6 +1,8 @@
 class AdventuresController < ApplicationController
 
   def index 
+    #@libraries = Library.all
+    @library = Library.new
     @libraries = Library.all
     @adventures = Adventure.all
     respond_to do |format|
@@ -10,6 +12,7 @@ class AdventuresController < ApplicationController
   end
 
   def show
+    @libraries = Library.all
     @adventure = Adventure.find(params[:id])
     respond_to do |format|
       format.html

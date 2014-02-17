@@ -12,7 +12,7 @@
 <% end %>
 
 <p> Get your library's scrape on:</p>
-<form accept-charset="UTF-8" action="/libraries" class="new_library" id="new_library" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-  <input class="urlfield" id="library_url" name="library[url]" placeholder="example.com" type="text" />
-</form>
-
+<%= form_for @library do |lib| %>
+    <%= lib.text_field :url, placeholder: "Input URL" %>
+    <%= lib.submit %>
+<% end %>
