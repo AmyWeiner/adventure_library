@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-library = Library.create(url: "http://www.mysite.com")
+library = Library.create(url: "http://obscure-beach-7777.herokuapp.com/adventures")
 
 name = "Amy"
 

@@ -10,7 +10,7 @@
 
 <p>Outsourced Adventures:</p>
 <% @libraries.each do |library| %>
-  <%= link_to "#{library.url}", library_path(library) %></br>
+  <%= link_to "#{library.url}", library.url %></br>
 <% end %>
 
 <p> Get your library's scrape on:</p>
