@@ -1,7 +1,4 @@
 class LibrariesController < ApplicationController
-  def new
-    @library = Library.new
-  end
 
   def index
     @libraries = Library.all
