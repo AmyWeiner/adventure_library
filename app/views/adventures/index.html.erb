@@ -1,18 +1,22 @@
 <h1>Welcome to Amy's Adventure Library</h1>
 
+<%= link_to "Add a New Adventure", new_adventure_path(@adventure)%>
+
 <p>Homebrewed Adventures:</p>
-<% @adventures.each do |adventure| %>
-  <%= adventure.title %></br>
+<% @adventures.each do |adventure| %></br>
+  <%= link_to "#{adventure.title}", adventure_path(adventure) %>
 <% end %>
 
 
 <p>Outsourced Adventures:</p>
 <% @libraries.each do |library| %>
-  url: <%= library.url %></br>
+  <%= link_to "#{library.url}", library_path(library) %></br>
 <% end %>
 
 <p> Get your library's scrape on:</p>
 <%= form_for @library do |lib| %>
     <%= lib.text_field :url, placeholder: "Input URL" %>
     <%= lib.submit %>
-<% end %>
+<% end %></br>
+
+

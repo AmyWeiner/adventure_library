@@ -38,5 +38,12 @@ class AdventuresController < ApplicationController
     @adventure = Adventure.find(params[:id])
   end
 
+  def destroy
+    respond_to do |format|
+      format.html { redirect_to issues_url }
+      format.json { head :no_content }
+    end
+  end
+
 end
 
