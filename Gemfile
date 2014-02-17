@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'typhoeus'
+
 # Encapsulates the JSON serialization of objects
 gem "active_model_serializers"
 

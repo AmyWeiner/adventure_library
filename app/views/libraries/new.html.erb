@@ -1,14 +1,8 @@
-<h1>Adventures</h1>
-
-<% @adventures.each do |adventure| %>
-  Title: <%= adventure.title %></br>
-  Author: <%= adventure.author %></br>
-  GUID: <%= adventure.guid %></br></br>
+<%= form_for @library do |f| %>
+  <%= f.text_field :url %></br>
+  <%= f.submit "Scrape" %>
 <% end %>
 
-<% @libraries.each do |library| %>
-  url: <%= library.url %></br>
-<% end %>
 
 <p> Add your library for scraping:</p>
 <form accept-charset="UTF-8" action="/libraries" class="new_library" id="new_library" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="IeYkdiER02gEfv/gNvCirIbYrQXBsMI/XXtrFOTA+jU=" /></div>

@@ -1,6 +1,7 @@
 class AdventuresController < ApplicationController
 
   def index 
+    @libraries = Library.all
     @adventures = Adventure.all
     respond_to do |format|
       format.html 
@@ -21,7 +22,7 @@ class AdventuresController < ApplicationController
   end
 
   def create
-    new_adventure = params.require(:adventure).permit(:title, :author, :pages_attributes => [:title, :text])
+    new_adventure = params.require(:adventure).permit(:title, :author, :pages_attributes => [:name, :text])
     @adventure = Adventure.new(new_adventure)
     if @adventure.save
       redirect_to @adventure

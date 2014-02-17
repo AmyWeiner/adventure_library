@@ -1,6 +1,14 @@
 class LibrariesController < ApplicationController
+  def new
+    @library = Library.new
+  end
+
   def index
     @libraries = Library.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @libraries }
+    end
   end
 
   def show
@@ -10,4 +18,20 @@ class LibrariesController < ApplicationController
       format.json { render json: @library }
     end
   end
+
+  def create
+    @library = Library.new
+    new_library = params.require(:library).permit(:url)
+    url = new_library["url"]
+    response = Typhoeus.get(url)
+    libraries_as_json = JSON.parse(response.body)
+    libraries_as_json["libraries"].each do |lib|
+      library = Library.find_or_create_by(url: lib["url"])
+      if(library)
+        LibraryWorker.perform_async(library.id)
+      end
+    end
+    redirect_to '/adventures'
+  end
 end
+
