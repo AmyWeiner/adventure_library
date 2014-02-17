@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.0'
+
 gem 'typhoeus'
 
 # Encapsulates the JSON serialization of objects
@@ -54,6 +56,9 @@ end
 
 # Use unicorn as the app server
 gem 'unicorn'
+
+# enable all platform features
+gem 'rails_12factor'
 
 gem 'sidekiq'
 
